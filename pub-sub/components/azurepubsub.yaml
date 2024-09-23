@@ -1,0 +1,15 @@
+
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azureorderpubsub
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: <your-redis-host>:<port>
+  - name: enableTLS
+    value: true
+  - name: redisPassword
+    value: <password>
