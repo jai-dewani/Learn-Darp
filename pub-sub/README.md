@@ -6,8 +6,30 @@ This project contains
 - Checkout: A console application publishing events 
 - Order-Processor: A webapp subscribing to the events
 
+# Ways to run the project
 
-## To run both the applications together  
+# Docker 
+-> Create docker images for both `order-processor` and `checkout` by running the following commands
+
+### Checkout
+- `cd checkout`
+- `docker build -t <docker-image-name> -f Dockerfile .`
+
+### Order Processor 
+- `cd order-processor`
+- `docker build -t <docker-image-name> -f Dockerfile .`
+
+-> Create containers by running them with `dapr` context
+
+### Checkout
+- `cd checkout`
+- `dapr run --app-id checkout --app-port 7008 --resources-path ../components/ -- dotnet run --urls http://localhost:7008`
+
+### Order Processor
+- `cd checkout` 
+- `dapr run --app-id order-processor --app-port 7006 --resources-path ../components/ -- dotnet run  --urls http://localhost:7006`
+
+# Run both the applications together directly  
 `dapr run -f .`
 
 Expected output 
