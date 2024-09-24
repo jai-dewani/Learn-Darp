@@ -10,7 +10,7 @@ for (int i = 1; i <= 10; i++) {
     // Publish an event/message using Dapr PubSub
     await client.PublishEventAsync("azureorderpubsub", "orders", order);
     Console.WriteLine("Published data: " + order);
-    await client.PublishEventAsync("orderpubsub", "myNewOrders", i);
+    await client.PublishEventAsync("azureorderpubsub", "myNewOrders", i);
     Console.WriteLine("Published new data format: " + i);
 
     
