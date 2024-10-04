@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: publishEvent
+spec:
+  type: bindings.azure.eventgrid
+  version: v1
+  metadata:
+    - name: accessKey  
+      value: "<access-key>"
+    - name: topicEndpoint  
+      value: "/<topic-endpoint>"
+    - name: direction  
+      value: "output"

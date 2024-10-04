@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: processEvent
+spec:
+  type: bindings.azure.eventgrid
+  version: v1
+  metadata:
+  - name: azureTenantId
+    value: "<tenant-id>"
+  - name: azureSubscriptionId
+    value: "<subscription-id>"
+  - name: azureClientId
+    value: "<client-id>"
+  - name: azureClientSecret
+    value: "<client-secret"
+  - name: direction
+    value: "input"
