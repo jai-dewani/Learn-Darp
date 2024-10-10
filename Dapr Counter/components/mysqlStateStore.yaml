@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component 
+metadata: 
+  name: sqllitestatestore
+spec: 
+  type: state.sqlite
+  version: v1 
+  metadata: 
+  # Connection string 
+  - name: connectionString 
+    value: "data.db" 
+
